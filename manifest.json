@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "__MSG_extensionName__",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "en",
+  "version": "0.1",
+  "author": "lilydjwg",
+  "applications": {
+    "gecko": {
+      "id": "text-reflow-we@lilydjwg.me"
+    }
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["text-reflow.js"],
+    "all_frames": true
+  }],
+  "icons": {
+    "48": "icons/ragged.svg",
+    "96": "icons/ragged.svg"
+  }
+}

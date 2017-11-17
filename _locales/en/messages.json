@@ -1,0 +1,12 @@
+{
+  "extensionName": {
+    "message": "Text Reflow WE",
+    "description": "Name of the extension."
+  },
+  
+  "extensionDescription": {
+    "message": "Allow click events to reflow text of that tag to fit screen width",
+    "description": "Description of the add-on."
+  }
+
+}
