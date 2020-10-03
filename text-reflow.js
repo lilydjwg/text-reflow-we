@@ -4,7 +4,11 @@ function reflow(e) {
   const sideMargin = 10
 
   // get device width in css pixels
-  const winWidth = window.innerWidth
+  let winWidth
+  if(typeof window.visualViewport !== 'undefined') {
+    winWidth = window.visualViewport.width
+  }
+  winWidth = winWidth || window.innerWidth
 
   // get nearest non-inline parent.
   let target = e.target
