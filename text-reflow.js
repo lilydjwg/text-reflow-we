@@ -4,15 +4,14 @@ function reflow(e) {
   const sideMargin = 10
 
   // get device width in css pixels
-  let winWidth
-  if(typeof window.visualViewport !== 'undefined') {
-    winWidth = window.visualViewport.width
-  }
-  winWidth = winWidth || window.innerWidth
+  const winWidth = window.visualViewport.width
 
   // get nearest non-inline parent.
   let target = e.target
-  for(let i=e.target; i!=null; i = i.parentElement) {
+  for(const i = e.target; i != null; i = i.parentElement) {
+    if(i.tagName == 'IMG' || i.tagName == 'VIDEO') {
+      return
+    }
     const icss = window.getComputedStyle(i)
     target = i
     if(icss['display'] != 'inline') break
