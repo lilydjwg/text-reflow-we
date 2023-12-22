@@ -24,8 +24,10 @@ function reflow(e) {
   if(bbox.width > winWidth) {
     const newWidth = winWidth - (2*sideMargin)
     target.style.width = newWidth + 'px'
-  } else {
+    target.__reflowed = true
+  } else if(target.__reflowed) { // don't remove width set by the page itself
     target.style.width = ''
+    target.__reflowed = false
   }
 }
 
